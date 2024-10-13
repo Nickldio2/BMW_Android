@@ -1,0 +1,18 @@
+<resources>
+    <!-- Add custom tab style -->
+    <style name="CustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="tabPaddingStart">0dp</item>
+        <item name="tabPaddingEnd">0dp</item>
+        <item name="tabPaddingTop">0dp</item>
+        <item name="tabPaddingBottom">0dp</item>
+    </style>
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+    <style name="CustomLaneGuidance" parent="MapboxStyleTurnIconManeuver">
+        <item name="maneuverTurnIconColor">#FFFFFF</item>
+        <item name="maneuverTurnIconShadowColor">#9D9D9D</item>
+    </style>
+</resources>

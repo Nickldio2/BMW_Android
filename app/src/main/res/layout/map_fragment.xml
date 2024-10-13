@@ -1,0 +1,203 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/map_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/mapView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:id="@+id/mapContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/userSpeed"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="12dp"
+        android:textColor="#FF0000"
+        android:textSize="26sp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:background="#88000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/zoomProgressBarCardView"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="24dp"
+        android:visibility="visible"
+        android:alpha="1"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#333333"
+        app:layout_constraintTop_toTopOf="@+id/mapView"
+        app:layout_constraintStart_toStartOf="@+id/mapView"
+        app:layout_constraintEnd_toEndOf="@+id/mapView">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/zoomProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:progressDrawable="@drawable/custom_progress_bar" />
+
+        </FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/btnRecenter"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="8dp"
+        android:background="@drawable/circular_button"
+        android:src="@drawable/ic_recenter"
+        android:visibility="gone"
+        android:contentDescription="@string/recenter_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnSearch"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="28dp"
+        android:elevation="8dp"
+        android:background="@drawable/circular_button"
+        android:src="@drawable/ic_search"
+        android:visibility="gone"
+        android:alpha="0"
+        android:contentDescription="@string/recenter_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btnGas"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="22dp"
+        android:elevation="8dp"
+        android:background="@drawable/circular_button"
+        android:src="@drawable/ic_gasblack"
+        android:visibility="gone"
+        android:alpha="0"
+        android:contentDescription="@string/recenter_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSearch"/>
+
+    <ImageButton
+        android:id="@+id/btnFood"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginTop="22dp"
+        android:elevation="8dp"
+        android:background="@drawable/circular_button"
+        android:src="@drawable/ic_foodblack"
+        android:visibility="gone"
+        android:alpha="0"
+        android:contentDescription="@string/recenter_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGas"/>
+
+    <Button
+        android:id="@+id/btnStartNavToMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nav_marker"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/previewCardView"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp"
+        app:cardBackgroundColor="#232323"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvRouteDuration"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRouteDistance"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <Button
+                    android:id="@+id/btnStartNavigation"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:text="@string/start_navigation"
+                    android:background="#FFFFFF"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <Button
+                    android:id="@+id/btnResetNavigation"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:text="@string/reset_navigation"
+                    android:background="#FFFFFF"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

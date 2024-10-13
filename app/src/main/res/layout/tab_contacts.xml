@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/transparent">
+    <!-- Add your content here -->
+
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:text="Tab 2"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF" />
+
+</FrameLayout>

@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)  // Start with the full map view2
+        setContentView(R.layout.activity_main)  // Start with the full map view
 
         if (savedInstanceState == null) {
             supportFragmentManager.commit {

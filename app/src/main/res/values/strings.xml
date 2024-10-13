@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">MapboxTest</string>
+    <string name="recenter_button">Re-center</string>
+    <string name="suggestion_format">%1$s - %2$s</string>
+    <string name="duration_preview">%1$d min</string>
+    <string name="distance_preview">%1$d km</string>
+    <string name="start_navigation">Start</string>
+    <string name="nav_marker">Route</string>
+    <string name="Nav"> </string>
+    <string name="settings"> </string>
+    <string name="distance_icon">ic_distance</string>
+    <string name="ic_distance">ic_distance</string>
+    <string name="ic_home">ic_home</string>
+    <string name="ic_gas">ic_gas</string>
+    <string name="ic_stt">ic_stt</string>
+    <string name="ic_food">ic_food</string>
+    <string name="ic_delete">ic_delete\n</string>
+    <string name="ic_search">ic_search</string>
+    <string name="search">" "</string>
+    <string name="tab_icon">tab_icon</string>
+    <string name="ic_recent">ic_recent</string>
+    <string name="speed_format">%d km/h</string>
+    <string name="reset_navigation">Cancel</string>
+    <string name="ic_maneuver">ic_maneuver</string>
+    <string name="cancel">Cancel</string>
+    <string name="null_string">null</string>
+    <string name="ic_tripBox">ic_tripBox</string>
+    <string name="ic_progress">ic_progress</string>
+    <string name="ic_reroute">ic_reroute</string>
+</resources>
