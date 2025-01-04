@@ -1,6 +1,5 @@
 package com.example.mapboxtest
 
-import android.util.Log
 import com.mapbox.common.location.Location
 import com.mapbox.navigation.core.trip.session.LocationMatcherResult
 import com.mapbox.navigation.core.trip.session.LocationObserver
@@ -15,13 +14,10 @@ class CustomLocationObserver(
         override fun onNewLocationMatcherResult(locationMatcherResult: LocationMatcherResult) {
 
             val location = locationMatcherResult.enhancedLocation
-            var speed = location.speed ?: 0.0
+            val speed = location.speed ?: 0.0
             val keyPoints = locationMatcherResult.keyPoints
 
             if (speed >= 5.0) {
-                if (speed > 30.0) {
-                    speed = 30.0
-                }
                 mapFragment.handleNewLocation(location, speed, keyPoints)
             }
 

@@ -165,6 +165,12 @@ class MapFragment : Fragment(R.layout.map_fragment) {
         }
 
         val speedKmh = (speed.times(3.6)).toInt()
+        var newPitch = defaultPitch + speed
+
+        if (newPitch > 58.0) {
+            newPitch = 58.0
+        }
+
         userSpeed.text = getString(R.string.speed_format, speedKmh)
 
         lastLocation = location
@@ -173,8 +179,8 @@ class MapFragment : Fragment(R.layout.map_fragment) {
         sharedViewModel.updateCurrentLocation(latLng)
 
         viewportDataSource.onLocationChanged(location)
-        viewportDataSource.followingPitchPropertyOverride(defaultPitch + speed)
-        viewportDataSource.followingZoomPropertyOverride(defaultZoom - (speed * 0.01))
+        viewportDataSource.followingZoomPropertyOverride(defaultZoom - (speed * 0.015))
+        viewportDataSource.followingPitchPropertyOverride(newPitch)
         viewportDataSource.evaluate()
 
         if (!isMapPrepared) {
