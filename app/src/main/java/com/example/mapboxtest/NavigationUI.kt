@@ -289,11 +289,7 @@ class NavigationUI : Fragment(R.layout.navigation_ui) {
             }
         }
 
-        // Initialize the SDK
-        if (!Places.isInitialized()) {
-            Places.initialize(requireContext(), "AIzaSyAtfgSZLYtkOs8FnPHHi7lCw4kd5KPsxBs")
-            Places.initializeWithNewPlacesApiEnabled(requireContext(), "AIzaSyAtfgSZLYtkOs8FnPHHi7lCw4kd5KPsxBs")
-        }
+
         placesClient = Places.createClient(requireContext())
         val suggestionsRecyclerView = view.findViewById<RecyclerView>(R.id.suggestionsRecyclerView)
 
